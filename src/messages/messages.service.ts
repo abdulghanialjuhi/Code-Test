@@ -39,7 +39,6 @@ export class MessagesService {
     }
 
 
-    // src/messages/messages.service.ts
     async searchMessages(index: string, conversationId: string, query: string, page: number, limit: number) {
         const response = await this.elasticSearchService.search(index, {
             "query": {

@@ -62,9 +62,9 @@ describe('MessagesService', () => {
       const result = await service.createMessage(createMessageDto);
 
       // Assert
-      expect(mockMessageModel).toHaveBeenCalledWith(createMessageDto); // Ensure constructor is called with correct data
-      expect(mockSave).toHaveBeenCalledTimes(1); // Ensure save is called once
-      expect(result).toEqual(savedMessage); // Ensure the result matches the expected saved message
+      expect(mockMessageModel).toHaveBeenCalledWith(createMessageDto);
+      expect(mockSave).toHaveBeenCalledTimes(1);
+      expect(result).toEqual(savedMessage);
     });
   });
 
