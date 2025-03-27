@@ -55,3 +55,38 @@ ELASTICSEARCH_MESSAGE_INDEX=messages_index
 ELASTICSEARCH_NODE=your-es-url
 ELASTICSEARCH_API_KEY=your-es-api-key
 ```
+
+## Project Structure
+
+Create a `.env` file in the root of the project and add the necessary Kafka and application configurations. Below is an example of the required environment variables:
+
+```bash
+src/
+│
+├── elasticsearch/                 
+│   ├── elasticsearch.module 
+│   ├── elasticsearch.service.ts 
+├── kafka/                 
+│   ├── consumer.service.ts 
+│   ├── kafka.module.ts 
+│   ├── producer.service.ts 
+│
+├── messages/              
+│   ├── message.consume.ts
+|       ├── dto/
+            ├── create-message.dto.ts
+|       ├── interfaces/
+            ├── message.interface.ts
+|       ├── schemas/
+            ├── message.schema.ts
+│   ├── message.consume.ts
+│   ├── messages.controller.ts
+│   ├── messages.module.ts
+│   ├── messages.service.ts 
+├── app.controller.ts  
+├── app.service.ts  
+├── app.module.ts  
+├── main.ts                
+└── ...
+
+```
