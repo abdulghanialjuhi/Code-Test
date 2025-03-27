@@ -7,12 +7,7 @@ This repository contains a **NestJS** application that integrates **Kafka** for 
 - [Project Overview](#project-overview)
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
-- [Running the Application](#running-the-application)
-- [Running Tests](#running-tests)
 - [Project Structure](#project-structure)
-- [Known Issues](#known-issues)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Project Overview
 
