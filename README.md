@@ -46,12 +46,12 @@ Create a `.env` file in the root of the project and add the necessary Kafka and 
 
 ```bash
 # MongoDB
-MONGODB_URI=mongodb+srv://gfyjd:xsqixPgVldGp8WAj@cluster0.pp6dzgx.mongodb.net/mydb?retryWrites=true&w=majority
+MONGODB_URI=your-mongodb-uri
 # Kafka Configuration
 KAFAKA_BROKER_URL=localhost:9092
 
 # ELASTICSEARCH
 ELASTICSEARCH_MESSAGE_INDEX=messages_index
-ELASTICSEARCH_NODE=https://my-elasticsearch-project-e17cbb.es.us-east-1.aws.elastic.cloud:443
-ELASTICSEARCH_API_KEY=c00yRjFwVUJ5bjN2SzJyMXFaTXI6YkxrQzJFUUhlcHA5b3Vuak00U3lwZw==
+ELASTICSEARCH_NODE=your-es-url
+ELASTICSEARCH_API_KEY=your-es-api-key
 ```
