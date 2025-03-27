@@ -28,16 +28,16 @@ To set up the project on your local environment:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/your-repository.git
-    cd your-repository
+    git clone git@github.com:abdulghanialjuhi/Code-Test.git
+    cd Code-Test
     ```
 
 2. **Install dependencies:**
 
-    This project uses **Yarn** for dependency management. If you don't have Yarn installed, [install Yarn](https://yarnpkg.com/getting-started/install) first.
+    This project uses **Yarn** for dependency management. If you don't have Yarn installed.
 
     ```bash
-    yarn install
+    npm install
     ```
 
 ## Environment Variables
@@ -45,10 +45,13 @@ To set up the project on your local environment:
 Create a `.env` file in the root of the project and add the necessary Kafka and application configurations. Below is an example of the required environment variables:
 
 ```bash
+# MongoDB
+MONGODB_URI=mongodb+srv://gfyjd:xsqixPgVldGp8WAj@cluster0.pp6dzgx.mongodb.net/mydb?retryWrites=true&w=majority
 # Kafka Configuration
-KAFKA_BROKER=localhost:9092
-KAFKA_CLIENT_ID=message-management
-KAFKA_GROUP_ID=message-management-group
+KAFAKA_BROKER_URL=localhost:9092
 
-# Other Configuration
-NODE_ENV=development
+# ELASTICSEARCH
+ELASTICSEARCH_MESSAGE_INDEX=messages_index
+ELASTICSEARCH_NODE=https://my-elasticsearch-project-e17cbb.es.us-east-1.aws.elastic.cloud:443
+ELASTICSEARCH_API_KEY=c00yRjFwVUJ5bjN2SzJyMXFaTXI6YkxrQzJFUUhlcHA5b3Vuak00U3lwZw==
+```
