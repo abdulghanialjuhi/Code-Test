@@ -115,5 +115,3 @@ npm run test
 ```
 
 ---
-
-This version includes architecture decisions focusing on multi-tenancy and security, as well as the testing strategy. Let me know if further modifications are needed!
