@@ -99,21 +99,14 @@ This project was designed with scalability in mind, using a **multi-tenant** arc
 - **Elasticsearch for Fast Search Capabilities**: Elasticsearch is integrated to enable fast indexing and searching of messages, ensuring high performance for query-heavy operations.
 - **MongoDB for Tenant Data Isolation**: MongoDB has been set up in such a way that it can support multiple tenants in the future, ensuring data isolation and compliance with multi-tenancy principles.
 - **Authentication & Authorization**: Basic authentication and authorization mechanisms are implemented to secure API endpoints and ensure only authorized users have access to the system.
-- **Caching**: Caching mechanisms have been integrated to ensure improved performance for frequently accessed data.
 
 ## Tests
 
-Unit tests have been implemented for both **Kafka consumers and producers**, along with **basic authentication and authorization tests** to ensure secure access control:
-
-- **Authentication**: Basic authentication tests verify the correctness of login credentials and session handling.
-- **Authorization**: Tests ensure that unauthorized users cannot access certain API routes.
-- **Message Flow Tests**: Tests verify message consumption and production, ensuring correct data flow and Kafka integration.
 
 Testing strategy includes:
 
 1. **Unit Testing**: Tests for each service, ensuring components work in isolation.
 2. **Integration Testing**: Verifies the communication between services, Kafka, and Elasticsearch.
-3. **Authentication and Authorization Tests**: Ensures secure access control.
 
 To run the tests:
 
