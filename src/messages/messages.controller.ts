@@ -1,8 +1,10 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, UseGuards } from '@nestjs/common';
 import { MessagesService } from './messages.service';
 import { CreateMessageDto } from './dto/create-message.dto';
 import { ConfigService } from '@nestjs/config';
 import { ProducerService } from '../kafka/producer.service';
+import { Roles } from '../services/roles.decorator';
+import { RolesGuard } from '../services/auth.middleware';
 
 @Controller('api/messages')
 export class MessagesController {
@@ -12,6 +14,7 @@ export class MessagesController {
     ) {}
 
     @Post()
+    @Roles('admin')
     async createMessage(@Body() createMessageDto: CreateMessageDto) {
         const message = await this.messagesService.createMessage(createMessageDto);
         // Publish to Kafka
@@ -28,6 +31,7 @@ export class MessagesController {
 }
 
 @Controller('api/conversations/:conversationId/messages')
+@UseGuards(RolesGuard)
 export class ConversationsController {
 
     constructor(
@@ -36,6 +40,7 @@ export class ConversationsController {
     ) {}
 
     @Get()
+    @Roles('admin')
     async getMessages(
         @Param('conversationId') conversationId: string,
         @Query('page') page: number,
@@ -46,6 +51,7 @@ export class ConversationsController {
     }
 
     @Get('search')
+    @Roles('admin')
     async searchMessages(
         @Param('conversationId') conversationId: string,
         @Query('q') query: string,

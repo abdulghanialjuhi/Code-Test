@@ -1,16 +1,16 @@
 import { IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateMessageDto {
-    @IsNotEmpty()
-    @IsString()
+    @IsNotEmpty({ message: 'conversationId is required' })
+    @IsString({ message: 'conversationId must be a string' })
     conversationId: string;
 
-    @IsNotEmpty()
-    @IsString()
+    @IsNotEmpty({ message: 'senderId is required' })
+    @IsString({ message: 'senderId must be a string' })
     senderId: string;
 
-    @IsNotEmpty()
-    @IsString()
+    @IsNotEmpty({ message: 'content is required' })
+    @IsString({ message: 'content must be a string' })
     content: string;
 
     metadata?: Record<string, any>;

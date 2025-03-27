@@ -9,6 +9,7 @@ export class ProducerService implements OnModuleInit, OnApplicationShutdown {
     private readonly producers;
 
     constructor(private readonly configService: ConfigService) {
+        // we can use same approach as elasticsearch module to support multi-tenancy
         const kafkaBroker = this.configService.get<string>('KAFKA_BROKER', 'localhost:9092');
         this.kafka = new Kafka({
             brokers: [kafkaBroker],

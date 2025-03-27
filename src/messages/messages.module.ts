@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { MessagesService } from './messages.service';
 import { ConversationsController, MessagesController } from './messages.controller';
@@ -7,6 +7,7 @@ import { TestConsumer } from './message.consume';
 import { ConsumerService } from '../kafka/consumer.service';
 import { MyElasticsearchModule } from '../elasticsearch/elasticsearch.module';
 import { KafkaModule } from '../kafka/kafka.module';
+import { AuthMiddleware } from '../services/auth.middleware';
 
 @Module({
     imports: [
@@ -14,7 +15,19 @@ import { KafkaModule } from '../kafka/kafka.module';
         MyElasticsearchModule,
         KafkaModule,
     ],
-    providers: [MessagesService, TestConsumer, ConsumerService],
+    providers: [
+        MessagesService,
+        TestConsumer,
+        ConsumerService,
+    ],
     controllers: [MessagesController, ConversationsController],
 })
-export class MessagesModule {}
+export class MessagesModule {
+
+    // protect all message routes with the AuthMiddleware
+    configure(consumer: MiddlewareConsumer) {
+        consumer
+        .apply(AuthMiddleware)
+        .forRoutes({ path: '*', method: RequestMethod.ALL });
+    }
+}
