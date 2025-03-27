@@ -12,10 +12,10 @@ describe('MessagesService', () => {
 
   const mockMessageModel = {
     save: jest.fn(),
-    find: jest.fn().mockReturnThis(), // Chainable method
-    sort: jest.fn().mockReturnThis(), // Chainable method
-    skip: jest.fn().mockReturnThis(), // Chainable method
-    limit: jest.fn().mockReturnThis(), // Chainable method
+    find: jest.fn().mockReturnThis(),
+    sort: jest.fn().mockReturnThis(),
+    skip: jest.fn().mockReturnThis(),
+    limit: jest.fn().mockReturnThis(),
     exec: jest.fn(),
   };
 
@@ -51,7 +51,7 @@ describe('MessagesService', () => {
     it('should create and save a new message', async () => {
       const createMessageDto = { content: 'Hello World', conversationId: '12345' };
       const savedMessage = { _id: '1', ...createMessageDto };
-      messageModel.create = jest.fn().mockResolvedValue(savedMessage); // Correct way to mock create
+      messageModel.create = jest.fn().mockResolvedValue(savedMessage);
 
       const result = await service.createMessage(createMessageDto);
 
