@@ -1,7 +1,3 @@
-I will add details about the multi-tenant architecture and the tests for authentication and authorization. Here's the updated version of the README:
-
----
-
 # Kafka Consumer/Producer with NestJS
 
 This repository contains a **NestJS** application that integrates **Kafka** for managing message consumers and producers using the KafkaJS library. It showcases how to build, test, and manage message flows.
