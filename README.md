@@ -105,7 +105,7 @@ This project was designed with scalability in mind, using a **multi-tenant** arc
 
 Testing strategy includes:
 
-1. **Unit Testing**: Tests for each service, ensuring components work in isolation.
+1. **Unit Testing**: Tests service, ensuring components work in isolation.
 2. **Integration Testing**: Verifies the communication between services, Kafka, and Elasticsearch.
 
 To run the tests:
